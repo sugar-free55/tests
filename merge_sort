@@ -1,0 +1,21 @@
+list = [6275, 3996, 3937, 7343, 548, 4039, 8923, 8255, 5069, 8167, 7505, 1281, 72, 2407, 1557,]
+
+n1 = len(list) // 2
+n2 = len(list) - n1
+list1 = [None]*(n1+1)
+list2 = [None]*(n2+1)
+for index_1 in range(n1):
+    list1[index_1] = list[index_1]
+for index_2 in range(n2):
+    list2[index_2] = list[n1+index_2]
+i = 0
+j = 0
+for absolute_index in range(n1+n2):
+    if list1[i] <= list2[j]:
+        list[absolute_index] = list1[i]
+        i = i+1
+    else:
+        list[absolute_index] = list2[j]
+        j = j+1
+
+print(list)
